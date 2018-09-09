@@ -17,6 +17,7 @@ export default new Config().merge({
   entry: ["babel-polyfill",'./App.js'],
   output: {
     path: __dirname + '/public',
+    publicPath:'/',
   },
   devtool:'source-map',
   module: {
@@ -24,7 +25,12 @@ export default new Config().merge({
             { 
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                use: { loader: "babel-loader" }
+                use: { 
+                  loader: "babel-loader",
+                  options: {
+                    presets: [['env', {modules: false}], 'stage-0', 'react']
+                  },
+                },
             },
             {
                 test: /\.css$/,
