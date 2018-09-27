@@ -10,6 +10,7 @@
     freeanswer: React.PropTypes.bool,
     freeanswertext: React.PropTypes.string.isRequired,
     cbFreeAnswerTextChanged: React.PropTypes.func.isRequired,
+    //2, получает соотв ещё один callback (cbSelected)
     cbSelected: React.PropTypes.func.isRequired,
   },
 

@@ -18,6 +18,7 @@
 
   getInitialState: function() {
     return { 
+      //1. selectedAnswerCode
       selectedAnswerCode: null,
       freeanswertext:this.props.deffreeanswertext,
     };

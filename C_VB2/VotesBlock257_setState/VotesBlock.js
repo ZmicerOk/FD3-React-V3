@@ -29,6 +29,8 @@
   },
 
   cntPlus3: function() {
+    //1. В setState передаётся функция которая получает текущее состояние стэйта prevState
+    //2. и возвращает хэш в котор. cnt - это текущее состояние cnt+1;
     this.setState( (prevState, props) => { return {cnt:prevState.cnt+1}; } );
     this.setState( (prevState, props) => { return {cnt:prevState.cnt+1}; } );
     this.setState( (prevState, props) => { return {cnt:prevState.cnt+1}; } );
