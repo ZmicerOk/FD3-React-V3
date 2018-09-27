@@ -13,11 +13,17 @@
         freeanswer: React.PropTypes.bool,
       })
     ),
+    //3.VotesBlock получил этот пропс сюда
     deffreeanswertext: React.PropTypes.string.isRequired,
+    //6. и в его названии def говорит что это "начальное значение. умолчательное"
   },
+//7. В пропсе начальное значение, а в getInitialState мы можем терперь его использовать
+//8. Правильно сначала прописывать PropTypes а уже потом getInitialState, то мы уже сможем обращаться к пропсам и знать каковы же они и их типы
 
   getInitialState: function() {
+    //4. state of freeanswertext изначально равен вот этому пропсу  (deffreeanswertext)
     return { freeanswertext:this.props.deffreeanswertext };
+    //5. понятно, что у нас freeanswertext внутри компонента всё время меняется, он лежит в state. но его начальное значение передано снаружи в "пропс"
   },
 
   freeAnswerTextChanged: function(fat) { 

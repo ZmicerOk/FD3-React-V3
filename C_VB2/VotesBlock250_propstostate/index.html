@@ -26,10 +26,11 @@
       {text:'избегаю',code:3,count:444},
       {text:'другой ответ',code:4,count:444,freeanswer:true},
     ];
-    var defaultFreeAnswerText="???";
+    var defaultFreeAnswerText="???";//1.не задано на пряиую в VotesBlock, а "прилетает от родителя". Началтьное умолчательное значение. 
 
     ReactDOM.render(
       React.createElement(VotesBlock,{question:questionText,answers:answersArr,
+        //2. передаёться в VotesBlock под именем deffreeanswertext:
         deffreeanswertext: defaultFreeAnswerText,workMode:1}), 
       document.getElementById('container') 
     );
