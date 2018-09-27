@@ -23,9 +23,10 @@
       freeanswertext:this.props.deffreeanswertext,
     };
   },
-
+//6 соотв. нащ родитель
   answerSelected: function(code) {
     console.log('выбран ответ с кодом '+code);
+   //7 в стэйт себе кладёт selectedAnswerCode
     this.setState( {selectedAnswerCode:code} );
   },
 

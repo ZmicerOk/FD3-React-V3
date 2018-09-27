@@ -10,11 +10,13 @@
     freeanswer: React.PropTypes.bool,
     freeanswertext: React.PropTypes.string.isRequired,
     cbFreeAnswerTextChanged: React.PropTypes.func.isRequired,
-    //2, получает соотв ещё один callback (cbSelected)
+    //2, получает соотв ещё один callback (cbSelected) через который он будет сообщать, что какой-то вариант ответа выбран
     cbSelected: React.PropTypes.func.isRequired,
   },
 
   answerClicked: function(EO) {
+    //4. он вызывает cbSelected - сообўіть своему родителю - "я выбоан"
+    //5 и передаёт в кач-ве аргумента собств. код ответв
     this.props.cbSelected(this.props.code);
   },
 
@@ -28,6 +30,7 @@
     if ( this.props.workMode==1 ) {
       return React.DOM.div(null,
         React.DOM.label({className:'VotesBlockAnswer'},
+        //3. при каждои изменении-клике по кнопке
           React.DOM.input({type:'radio',value:this.props.code,name:'voteanswer',onClick:this.answerClicked}),
           React.DOM.span(null,this.props.text),
           this.props.freeanswer
