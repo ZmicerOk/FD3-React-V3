@@ -41,6 +41,7 @@
         freeanswer:v.freeanswer, freeanswertext:this.state.freeanswertext, 
         cbSelected:this.answerSelected,
         cbFreeAnswerTextChanged:this.freeAnswerTextChanged,
+        //1. тут уже нет isSellectedб но передаёт вариант выбранного ответа selectedAnswerCode
         selectedAnswerCode:this.state.selectedAnswerCode,
         workMode:this.props.workMode,
       })

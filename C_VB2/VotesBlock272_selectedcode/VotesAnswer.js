@@ -3,6 +3,7 @@
   displayName: 'VotesAnswer',
 
   propTypes: {
+    //2. Компонент VotesAnswer всегда знает собственны code
     code: React.PropTypes.number.isRequired,
     count: React.PropTypes.number.isRequired,
     text: React.PropTypes.string.isRequired,
@@ -11,6 +12,7 @@
     freeanswertext: React.PropTypes.string.isRequired,
     cbFreeAnswerTextChanged: React.PropTypes.func.isRequired,
     cbSelected: React.PropTypes.func.isRequired,
+    // 3. и теперь он знает а какой же вариант ответа сейчас выбран selectedAnswerCode
     selectedAnswerCode: React.PropTypes.number, // может быть null, пока ни один ответ не выбран
   },
 
@@ -33,6 +35,7 @@
           this.props.freeanswer
             ?React.DOM.input({type:'text',name:'votefreeanswer',className:'FreeAnswer',
               defaultValue:this.props.freeanswertext,onChange:this.freeAnswerTextChanged,
+             // 4 если они сейчас не равны 
               disabled:(this.props.selectedAnswerCode!=this.props.code)
             })
             :null

@@ -41,6 +41,7 @@
         freeanswer:v.freeanswer, freeanswertext:this.state.freeanswertext, 
         cbSelected:this.answerSelected,
         cbFreeAnswerTextChanged:this.freeAnswerTextChanged,
+        //1. в кач-ве пропса isSelected направляет рез-ты (...==v.code) труе или фалш 
         isSelected:(this.state.selectedAnswerCode==v.code),
         workMode:this.props.workMode,
       })

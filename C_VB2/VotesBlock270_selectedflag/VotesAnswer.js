@@ -11,6 +11,7 @@
     freeanswertext: React.PropTypes.string.isRequired,
     cbFreeAnswerTextChanged: React.PropTypes.func.isRequired,
     cbSelected: React.PropTypes.func.isRequired,
+    //2. 
     isSelected: React.PropTypes.bool.isRequired,
   },
 
@@ -30,6 +31,8 @@
         React.DOM.label({className:'VotesBlockAnswer'},
           React.DOM.input({type:'radio',value:this.props.code,name:'voteanswer',onClick:this.answerClicked}),
           React.DOM.span(null,this.props.text),
+//3 если isSelected то не disabled иначе  disabled
+
           this.props.freeanswer
             ?React.DOM.input({type:'text',name:'votefreeanswer',className:'FreeAnswer',
               defaultValue:this.props.freeanswertext,onChange:this.freeAnswerTextChanged,
