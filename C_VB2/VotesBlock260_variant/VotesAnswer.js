@@ -15,8 +15,8 @@
   },
 
   answerClicked: function(EO) {
-    //4. он вызывает cbSelected - сообўіть своему родителю - "я выбоан"
-    //5 и передаёт в кач-ве аргумента собств. код ответв
+    //4. он вызывает cbSelected - сообщить своему родителю - "я выбран" 
+    //5 и передаёт в кач-ве аргумента собств. код ответв -  - а у каждого ответа уникальный код
     this.props.cbSelected(this.props.code);
   },
 
@@ -30,9 +30,10 @@
     if ( this.props.workMode==1 ) {
       return React.DOM.div(null,
         React.DOM.label({className:'VotesBlockAnswer'},
-        //3. при каждои изменении-клике по кнопке
+        //3. при каждои изменении-клике по кнопке радио 
           React.DOM.input({type:'radio',value:this.props.code,name:'voteanswer',onClick:this.answerClicked}),
           React.DOM.span(null,this.props.text),
+          //свободный ответ
           this.props.freeanswer
             ?React.DOM.input({type:'text',name:'votefreeanswer',className:'FreeAnswer',
               defaultValue:this.props.freeanswertext,onChange:this.freeAnswerTextChanged})

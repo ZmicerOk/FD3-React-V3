@@ -18,15 +18,16 @@
 
   getInitialState: function() {
     return { 
-      //1. selectedAnswerCode
+      //1. selectedAnswerCode - код ответа который сейчас выбран
       selectedAnswerCode: null,
       freeanswertext:this.props.deffreeanswertext,
     };
   },
-//6 соотв. нащ родитель
+//6 соотв. нащ родитель получает код ответа
   answerSelected: function(code) {
+    //7 вывод кода в консоль
     console.log('выбран ответ с кодом '+code);
-   //7 в стэйт себе кладёт selectedAnswerCode
+   //8.и в стэйт себе кладёт selectedAnswerCode
     this.setState( {selectedAnswerCode:code} );
   },
 
