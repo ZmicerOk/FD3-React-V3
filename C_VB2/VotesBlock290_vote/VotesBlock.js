@@ -31,12 +31,15 @@
 
   vote: function() {
     console.log('голосование завершено, выбран ответ с кодом '+this.state.selectedAnswerCode);
-
+//4. Меняем пропсы - это плохо
+//5. перебираються (forEach) все варианты ответов
     this.props.answers.forEach( answer => {
+      //6. стрел.функц - если вариант ответа  тот который сейчас выбран
       if ( answer.code==this.state.selectedAnswerCode )
+      //7. то в нем кол-во голосов увел. на 1
         answer.count++;
     } );
-
+//8. workMode меняем на 2 - условно - ВАЖНО - пропсы меняются  - но стэйт переводиться потом в др сост
     this.setState( {workMode:2} );
   },
 
@@ -61,7 +64,10 @@
     return React.DOM.div( {className:'VotesBlock'}, 
       React.createElement(VotesQuestion, {question:this.props.question} ),
       React.DOM.div( {className:'Answers'}, answersCode ),
+      //2. режим голосования ==1 и вариант ответа труе (!=null)  
+      //3. в этом вся "сила реакта" - все чнреоез state
       ((this.state.workMode==1)&&this.state.selectedAnswerCode)
+      //1. кнопочка прголосовать. доступна не всегда, а если
         ?React.DOM.input( {type:'button',value:'проголосовать',onClick:this.vote} )
         :null
     );

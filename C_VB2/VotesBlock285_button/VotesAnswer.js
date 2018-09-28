@@ -32,7 +32,9 @@
           React.DOM.input({type:'radio',value:this.props.code,name:'voteanswer',
           //2. в кач-ве checked - если  это тот вариант ответа который сейчас выбран=> нарисовать её чекнутую.
             checked:(this.props.selectedAnswerCode==this.props.code),
-            onClick:this.answerClicked}),
+           // 3. если убрать onClick - радио-инпут станет ReadOnly/ поэтому надо парой checked & onClick
+            onClick:this.answerClicked
+          }),
           React.DOM.span(null,this.props.text),
           this.props.freeanswer
             ?React.DOM.input({type:'text',name:'votefreeanswer',className:'FreeAnswer',
