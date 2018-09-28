@@ -28,7 +28,9 @@
     if ( this.props.workMode==1 ) {
       return React.DOM.div(null,
         React.DOM.label({className:'VotesBlockAnswer'},
+        //1. когда редериться инпут-радио
           React.DOM.input({type:'radio',value:this.props.code,name:'voteanswer',
+          //2. в кач-ве checked - если  это тот вариант ответа который сейчас выбран=> нарисовать её чекнутую.
             checked:(this.props.selectedAnswerCode==this.props.code),
             onClick:this.answerClicked}),
           React.DOM.span(null,this.props.text),

@@ -22,13 +22,15 @@
       freeanswertext:this.props.deffreeanswertext,
     };
   },
-
+// 3. for this arg 4 num set to code
+// 4.  but radio button not triggered - because radio is uncontrolled component
   answerSelected: function(code) {
     console.log('выбран ответ с кодом '+code);
     this.setState( {selectedAnswerCode:code} );
   },
 
   selectAnswer4: function() {
+    // 2.more universal func with set 4 arg in
     this.answerSelected(4);
   },
 
@@ -53,6 +55,7 @@
     return React.DOM.div( {className:'VotesBlock'}, 
       React.createElement(VotesQuestion, {question:this.props.question} ),
       React.DOM.div( {className:'Answers'}, answersCode ),
+      //1. sellect variant 4, when click selectAnswer4
       React.DOM.input( {type:'button',value:'выбрать вариант 4',onClick:this.selectAnswer4} ),
     );
 
