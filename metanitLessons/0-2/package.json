@@ -1,0 +1,11 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "no",
+  "main": "index.jsx",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "author": "vasilkou",
+  "license": "ISC"
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hello React</title>
+</head>
+<body>
+    <div id="app"> </div>
+      
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+     
+   <script type="text/babel">
+
+
+//     class Hello extends React.Component {
+//         render() {
+//             return <h1>Hello, React</h1>;
+//         }
+//     }
+
+
+// function Hello() {
+//   return <h1>Привет, Eugene</h1>;
+// }
+
+var Hello =() => {
+    return (<h1>Привет, Eugene</h1>);
+}
+
+    ReactDOM.render(
+        <Hello></Hello>,
+     //<Hello/>,
+        document.getElementById("app")
+    )
+// Если рассмотреть поэтапно, то рендеринг компонента будет происходить следующим образом:
+// Для рендеринга компонента <Hello /> вызывается функция ReactDOM.render()
+// React вызывает компонент Hello
+// Компонент Hello возвращает элемент <h1>Привет, Eugene</h1>
+// React DOM обновляет стандартный DOM веб-страницы, чтобы она содержала элемент <h1>Привет, Eugene</h1>
+   </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+  
+        button {
+            width: 100px;
+            height: 30px;
+            border-radius: 4px;
+            margin: 50px;
+        }
+
+        .on{
+            columns: #666666;
+            background-color: red;
+        }
+
+        .off{
+            color:#888;
+            background-color: white;
+        }
